@@ -49,24 +49,6 @@ public class Inventario{
         return null;
     }
 
-    public Producto buscarBinariaPorId(int id) {
-        int i = 0;
-        int s = inventario.size() - 1;
-        int c;
-        while (i <= s) {
-            c = (i + s) / 2;
-            int actual = inventario.get(c).getId();
-            if (actual == id) {
-                return inventario.get(c);
-            } else if (id < actual) {
-                s = c - 1;
-            } else {
-                i = c + 1;
-            }
-        }
-        return null;
-    }
-
     public List<Producto> buscarPorCategoria(String categoria) {
         List<Producto> lista = new ArrayList<Producto>();
         for (Producto p : inventario) {
